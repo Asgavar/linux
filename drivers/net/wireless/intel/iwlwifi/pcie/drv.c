@@ -1041,6 +1041,10 @@ static int iwl_pci_probe(struct pci_dev *pdev, const struct pci_device_id *ent)
 		}
 	}
 
+  if (pdev->device == 0x2725 && pdev->subsystem_device == 0x0024) {
+    iwl_trans->name = "twoja stara";
+  }
+
 #if IS_ENABLED(CONFIG_IWLMVM)
 	/*
 	 * special-case 7265D, it has the same PCI IDs.
